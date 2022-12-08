@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StudentSql.MainPage">
+
+
+    <HorizontalStackLayout HorizontalOptions="Center">
+        
+    </HorizontalStackLayout>
+
+
+
+    <StackLayout >
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="StuName"  HorizontalTextAlignment="Center"/>
+                <Entry x:Name="Stu_Name" WidthRequest="250" Margin="10" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" >
+                <Label Text="StuDept_"/>
+                <Entry x:Name="Stu_Dept" WidthRequest="250" Margin="10"/>
+            </HorizontalStackLayout>
+
+        <Button x:Name="Button_Add" Clicked="Button_Add_Clicked" Text="Add" WidthRequest="300" Margin="20"/>
+        <ScrollView >
+            <ListView x:Name="Stu_List_View"   WidthRequest="300">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+                                    <Label Text="{Binding ID}"/>
+                                    <Label Text="{Binding Name}"/>
+                                    <Label Text="{Binding Department}"/>
+                                <Button Text="Del" x:Name="Delete"  Clicked="Delete_Clicked" 
+                                        BindingContext="{Binding ID}" />
+                                </StackLayout>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+        <Button x:Name="Button_Show" Clicked="Button_Show_Clicked" Text="Show" WidthRequest="300" Margin="20"/>
+
+
+
+
+
+
+        </StackLayout>
+
+   
+
+</ContentPage>
